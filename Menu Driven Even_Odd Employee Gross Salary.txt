@@ -1,0 +1,64 @@
+//Menu Driven program 1 For ODD_EVEN and 2. Total Salary of Employee//
+
+#include<stdio.h>
+
+int Gross_Salary(int);
+int Odd_Even(int);
+void main()
+{
+	int choice;
+	printf("\n\nEnter your choice \n1) Odd_Even \n2) Gross_Salary\n\n--->");
+	scanf("%d",&choice);
+	if(choice==1)
+	{	int x, num;
+		printf("Enter no to check :");
+		scanf("%d",&num);
+		
+		x=Odd_Even(num);
+		if(x==0)
+		{
+			printf("Even no");
+		}
+		else
+		{
+			printf("Odd no");
+		}
+	}
+	else
+	if(choice==2)
+	{	int basic,z;
+		printf("\nEnter basic salary of employee :");
+		scanf("%d",&basic);
+		z=Gross_Salary(basic);
+		printf("\nTotal Salary of employee is = %d",z);
+
+	}
+	else
+	{
+		printf("\n\nInvalid Choice");
+	}
+}
+int Odd_Even(int num)
+{
+	int r;
+		r=num%2;
+		return r;
+}
+int Gross_Salary(int basic)
+{
+	int hra,ta,da,Total_Salary;
+	if(basic<=10000)
+	{
+		da=(basic*10)/100;
+		ta=(basic*15)/100;
+		hra=(basic*20)/100;
+	}
+	else
+	{
+		da=(basic*15)/100;
+		ta=(basic*20)/100;
+		hra=(basic*25)/100;
+	}
+	Total_Salary=basic+hra+ta+da;
+	return Total_Salary;
+}
